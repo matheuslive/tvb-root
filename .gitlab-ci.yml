@@ -1,7 +1,11 @@
-# Build Docker image from 1.5.10 Stable
+image: docker:latest
+
+stages:
+  - build
+  - push-latest
+
 docker-build-1.5.10:
-  # Official docker image.
-  image: docker:latest
+  # Build Docker image from 1.5.10 Stable
   stage: build
   services:
     - docker:dind
@@ -15,8 +19,7 @@ docker-build-1.5.10:
 
 docker-build-latest:
   # Tag and push latest image to registry
-  image: docker:latest
-  stage: build
+  stage: push-latest
   services:
     - docker:dind
   before_script:
