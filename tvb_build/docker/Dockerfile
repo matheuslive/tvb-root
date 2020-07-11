@@ -37,7 +37,7 @@ RUN wget https://zenodo.org/record/3688773/files/tvb-data.zip?download=1 -O tvb_
 
 # make sure a copy of tvb-root exists inside, for users without Github clone
 USER $TVB_USER
-RUN git clone --depth 1 --branch 1.5.10 https://github.com/the-virtual-brain/tvb-root.git
+RUN git clone --depth 1 --branch 1.5.10 https://github.com/matheuslive/tvb-root.git
 
 USER root
 ARG LAST_SHA=LATEST
