@@ -2,12 +2,12 @@ FROM continuumio/miniconda
 
 RUN apt-get -y update && apt-get -y install build-essential gcc
 RUN apt-get -y install texlive-base texlive-formats-extra
-RUN apt-get -y install postgresql
+#RUN apt-get -y install postgresql
 
-USER postgres
-RUN service postgresql start && createdb -O postgres tvb-test && psql --command "ALTER USER postgres WITH PASSWORD 'postgres';"
+#USER postgres
+#RUN service postgresql start && createdb -O postgres tvb-test && psql --command "ALTER USER postgres WITH PASSWORD 'postgres';"
 
-USER root
+#USER root
 
 #RUN conda update -n base -c defaults conda
 RUN conda create -y --name tvb-docs python=2.7 nomkl scipy numpy networkx scikit-learn cython h5py pip==9.0.1 numexpr psutil
