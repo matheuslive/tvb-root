@@ -20,7 +20,7 @@ RUN /opt/conda/envs/tvb-docs/bin/pip install formencode cfflib genshi nibabel sq
 RUN /opt/conda/envs/tvb-docs/bin/pip install tvb-gdist mod-pywebsocket apscheduler lxml minixsv tzlocal
 
 RUN conda create -y --name tvb-run python=2.7 nomkl scipy numpy networkx scikit-learn cython h5py pip==9.0.1 numexpr psutil
-RUN conda install -y --name tvb-run pytest pytest-cov ipython ipython-notebook psycopg2
+RUN conda install -y --name tvb-run pytest pytest-cov ipython psycopg2
 RUN conda install -y --name tvb-run pytables numba scikit-image==0.14.2 simplejson cherrypy docutils
 RUN conda install -y --name tvb-run -c conda-forge subprocess32
 #RUN /opt/conda/envs/tvb-run/bin/pip install --upgrade pip
