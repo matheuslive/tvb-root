@@ -33,3 +33,5 @@ COPY kernel.json /opt/conda/envs/tvb-run/share/jupyter/kernels/python2/
 # Check why this is not created
 RUN mkdir /root/.tvb-temp
 RUN mkdir /root/.tvb-temp/logs
+
+CMD ["bash","-c","source activate tvb-run && cd tvb_bin && python -m tvb.interfaces.web.run WEB_PROFILE"]
