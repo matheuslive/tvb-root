@@ -30,6 +30,11 @@ RUN /opt/conda/envs/tvb-run/bin/pip install matplotlib==2.1.0
 RUN /opt/conda/envs/tvb-run/bin/pip install formencode cfflib genshi nibabel sqlalchemy==1.1.14 sqlalchemy-migrate==0.11.0 allensdk BeautifulSoup4
 RUN /opt/conda/envs/tvb-run/bin/pip install tvb-gdist
 
+RUN wget https://zenodo.org/record/3688773/files/tvb-data.zip?download=1 -O tvb_data.zip; \
+    mkdir tvb_data; unzip tvb_data.zip -d tvb_data; rm tvb_data.zip; \
+    cd tvb_data; \
+    /opt/conda/envs/tvb-run/bin/python setup.py develop
+
 # make sure a copy of tvb-root exists inside, for users without Github clone
 USER $TVB_USER
 RUN git clone --depth 1 --branch 1.5.10 https://github.com/the-virtual-brain/tvb-root.git
